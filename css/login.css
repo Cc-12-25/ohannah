@@ -1,0 +1,106 @@
+/* 跳出登入登出視窗 */
+
+input[type=text], 
+input[type=password],
+input[type=email],
+input[type=date],
+input[type=tel]{
+        width: 100%;
+        padding: 10px 20px;
+        margin: 10px 0;
+        display: inline-block;
+        border: 1 solid black;
+        box-sizing: border-box;
+    }
+
+#Login{
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    cursor:pointer;
+    width: 100%;
+    border-radius: 3px;
+}
+#Login:hover{
+    opacity: 0.5;
+}
+
+ /* 註冊按鈕 */
+ #Signup{
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    cursor:pointer;
+    width: 100%;
+    border-radius: 3px;
+}
+#Signup:hover{
+    opacity: 0.5;
+}
+
+.container{
+    text-align: center;
+    margin: 20px 0 10px 0;
+    position: relative;
+}
+#LoginUsPa{
+    padding: 10px;
+
+}
+.modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    margin-top: 40px;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    /* background-color: rgb(0, 0, 225); */
+    background-color: rgba(0, 0, 0,0.4);
+    padding-top: 60px;
+}
+.modal-content{
+    background-color: white;
+    margin: 5% auto 15% auto;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+/* 叉叉 */
+.closepost{
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+.closepost:hover, 
+.closepost:focus{
+    color: red;
+    cursor: pointer;
+}
+
+.npsw:hover{
+    color: blue;
+    cursor: pointer;
+}
+/* 跳出動畫 */
+.animate{
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s;
+}
+@-webkit-keyframes animatezoom {
+    from{-webkit-transform: steps(0);}
+    to {-webkit-transform: scale(1);}
+}
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
