@@ -215,103 +215,94 @@ $user = $_SESSION['user'];
     </div>
     
     <!-- 商品輪播 -->
-    <div id="bestsellertop" class="my-5">
-        <div class="mt-5 pt-5 pb-4">
+    <div id="bestsellertop" class="my-5 mx-5">
+        <div class="container my-5">
             <h1 style="font-weight: bolder; text-align: center;">暢銷TOP</h1>
-        </div>
-        <div id="caedCarousel" class="carousel slide py-3 m-3" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <div class="row">
-                        <div class="col-4">
-                            <div class="card">
-                                <div style="position: relative;">
-                                    <img src="./img/面膜1.JPG" class="card-img " alt="...">
-                                    <a class="overlay"><button id="H" onclick="addToCart('保濕面膜')"
-                                            class="bi bi-cart2 btn btn-light btn-sm"></button></a>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title" style="text-align: center;">保濕面膜</h5>
-                                </div>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="position-relative">
+                                <img src="./img/面膜1.jpg" class="card-img " alt="...">
+                                <a class="overlay"><button id="H" onclick="addToCart('保濕面膜')"
+                                        class="bi bi-cart2 btn btn-light btn-sm"></button></a>
                             </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="card">
-                                <div style="position: relative;">
-                                    <img src="./img/青春水針1.JPG" class="card-img " alt="...">
-                                    <a class="overlay"><button id="H" onclick="addToCart('青春水針')"
-                                            class="bi bi-cart2 btn btn-light btn-sm"></button></a>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title" style="text-align: center;">青春水針</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="card">
-                                <div style="position: relative;">
-                                    <img src="./img/隔離素顏霜1.JPG" class="card-img " alt="...">
-                                    <a class="overlay"><button id="H" onclick="addToCart('隔離素顏霜')"
-                                            class="bi bi-cart2 btn btn-light btn-sm"></button></a>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title" style="text-align: center;">隔離素顏霜</h5>
-                                </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">保濕面膜</h5>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="row">
-                        <div class="col-4">
-                            <div class="card">
-                                <div style="position: relative;">
-                                    <img src="./img/蝸牛霜1.JPG" class="card-img " alt="...">
-                                    <a class="overlay"><button id="H" onclick="addToCart('蝸牛霜')"
-                                            class="bi bi-cart2 btn btn-light btn-sm"></button></a>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title" style="text-align: center;">蝸牛霜</h5>
-                                </div>
+
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="position-relative">
+                                <img src="./img/青春水針1.jpg" class="card-img " alt="...">
+                                <a class="overlay"><button id="H" onclick="addToCart('青春水針')"
+                                        class="bi bi-cart2 btn btn-light btn-sm"></button></a>
                             </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="card">
-                                <div style="position: relative;">
-                                    <img src="./img/玻尿酸精華液1.JPG" class="card-img " alt="...">
-                                    <a class="overlay"><button id="H" onclick="addToCart('玻尿酸精華液')"
-                                            class="bi bi-cart2 btn btn-light btn-sm"></button></a>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title" style="text-align: center;">玻尿酸精華液</h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-4">
-                            <div class="card">
-                                <div style="position: relative;">
-                                    <img src="./img/洗面乳1.JPG" class="card-img " alt="...">
-                                    <a class="overlay"><button id="H" onclick="addToCart('胺基酸洗面乳')"
-                                            class="bi bi-cart2 btn btn-light btn-sm"></button></a>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title" style="text-align: center;">胺基酸洗面乳</h5>
-                                </div>
+                            <div class="card-body">
+                                <h5 class="card-title" style="text-align: center;">青春水針</h5>
                             </div>
                         </div>
                     </div>
+
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="position-relative">
+                                <img src="./img/隔離素顏霜1.jpg" class="card-img " alt="...">
+                                <a class="overlay"><button id="H" onclick="addToCart('隔離素顏霜')"
+                                        class="bi bi-cart2 btn btn-light btn-sm"></button></a>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title" style="text-align: center;">隔離素顏霜</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="position-relative">
+                                <img src="./img/蝸牛霜1.jpg" class="card-img " alt="...">
+                                <a class="overlay"><button id="H" onclick="addToCart('蝸牛霜')"
+                                        class="bi bi-cart2 btn btn-light btn-sm"></button></a>
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">蝸牛霜</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="position-relative">
+                                <img src="./img/玻尿酸精華液1.jpg" class="card-img " alt="...">
+                                <a class="overlay"><button id="H" onclick="addToCart('玻尿酸精華液')"
+                                        class="bi bi-cart2 btn btn-light btn-sm"></button></a>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title" style="text-align: center;">玻尿酸精華液</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="position-relative">
+                                <img src="./img/洗面乳1.jpg" class="card-img " alt="...">
+                                <a class="overlay"><button id="H" onclick="addToCart('胺基酸洗面乳')"
+                                        class="bi bi-cart2 btn btn-light btn-sm"></button></a>
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">胺基酸洗面乳</h5>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+
+                <div class="swiper-pagination"></div>
             </div>
-            <a class="carousel-control-prev" href="#caedCarousel" role="button" data-bs-slide="prev"
-                style="width: 30px;">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only"></span>
-            </a>
-            <a class="carousel-control-next" href="#caedCarousel" role="button" data-bs-slide="next"
-                style="width: 30px;">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only"></span>
-            </a>
         </div>
     </div>
     <!-- 產品區 -->
@@ -319,12 +310,12 @@ $user = $_SESSION['user'];
         <div class="mt-5 pt-5 pb-4">
             <h1 style="font-weight: bolder; text-align: center;">所有產品</h1>
         </div>
-        <div class="row py-2 m-1">
-            <div class="col-3">
+        <div class="row py-2 m-1 g-3">
+            <div class="col-12 col-sm-6  col-lg-3 mb-4">
                 <div id="Card" class="card">
                     <div class="con" style="position: relative;">
-                        <img id="Img" src="./img/洗面乳2.JPG" class="card-img " alt="...">
-                        <button id="dost" onclick="window.location.href='Product.php'" class="overlay bi bi-three-dots btn btn-light btn-sm"></button>
+                        <img id="Img" src="./img/洗面乳2.jpg" class="card-img " alt="...">
+                        <button id="dost" class="overlay bi bi-three-dots btn btn-light btn-sm"></button>
                     </div>
                     <div class="card-body">
                         <h6>胺基酸洗面乳</h6>
@@ -332,10 +323,10 @@ $user = $_SESSION['user'];
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-sm-6  col-lg-3 mb-4">
                 <div id="Card" class="card">
                     <div class="con" style="position: relative;">
-                        <img id="Img" src="./img/洋甘菊化妝水1.JPG" class="card-img " alt="...">
+                        <img id="Img" src="./img/洋甘菊化妝水1.jpg" class="card-img " alt="...">
                         <button id="dost" class="overlay bi bi-three-dots btn btn-light btn-sm"></button>
                     </div>
                     <div class="card-body">
@@ -344,10 +335,10 @@ $user = $_SESSION['user'];
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-sm-6  col-lg-3 mb-4">
                 <div id="Card" class="card">
                     <div class="con" style="position: relative;">
-                        <img id="Img" src="./img/玫瑰化妝水.JPG" class="card-img " alt="...">
+                        <img id="Img" src="./img/玫瑰化妝水.jpg" class="card-img " alt="...">
                         <button id="dost" class="overlay bi bi-three-dots btn btn-light btn-sm"></button>
                     </div>
                     <div class="card-body">
@@ -356,10 +347,10 @@ $user = $_SESSION['user'];
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-sm-6  col-lg-3 mb-4">
                 <div id="Card" class="card">
                     <div class="con" style="position: relative;">
-                        <img id="Img" src="./img/青春水針2.JPG" class="card-img " alt="...">
+                        <img id="Img" src="./img/青春水針2.jpg" class="card-img " alt="...">
                         <button id="dost" class="overlay bi bi-three-dots btn btn-light btn-sm"></button>
                     </div>
                     <div class="card-body">
@@ -370,10 +361,10 @@ $user = $_SESSION['user'];
             </div>
         </div>
         <div class="row py-2 m-1">
-            <div class="col-3">
+            <div class="col-12 col-sm-6  col-lg-3 mb-4">
                 <div id="Card" class="card">
                     <div class="con" style="position: relative;">
-                        <img id="Img" src="./img/保濕膠囊1.JPG" class="card-img " alt="...">
+                        <img id="Img" src="./img/保濕膠囊1.jpg" class="card-img " alt="...">
                         <button id="dost" class="overlay bi bi-three-dots btn btn-light btn-sm"></button>
                     </div>
                     <div class="card-body">
@@ -382,10 +373,10 @@ $user = $_SESSION['user'];
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-sm-6  col-lg-3 mb-4">
                 <div id="Card" class="card">
                     <div class="con" style="position: relative;">
-                        <img id="Img" src="./img/玻尿酸精華液2.JPG" class="card-img " alt="...">
+                        <img id="Img" src="./img/玻尿酸精華液2.jpg" class="card-img " alt="...">
                         <button id="dost" class="overlay bi bi-three-dots btn btn-light btn-sm"></button>
                     </div>
                     <div class="card-body">
@@ -394,10 +385,10 @@ $user = $_SESSION['user'];
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-sm-6  col-lg-3 mb-4">
                 <div id="Card" class="card">
                     <div class="con" style="position: relative;">
-                        <img id="Img" src="./img/角鯊烷膠囊精華液2.JPG" class="card-img " alt="...">
+                        <img id="Img" src="./img/角鯊烷膠囊精華液2.jpg" class="card-img " alt="...">
                         <button id="dost" class="overlay bi bi-three-dots btn btn-light btn-sm"></button>
                     </div>
                     <div class="card-body">
@@ -406,10 +397,10 @@ $user = $_SESSION['user'];
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-sm-6  col-lg-3 mb-4">
                 <div id="Card" class="card">
                     <div class="con" style="position: relative;">
-                        <img id="Img" src="./img/蝸牛霜2.JPG" class="card-img " alt="...">
+                        <img id="Img" src="./img/蝸牛霜2.jpg" class="card-img " alt="...">
                         <button id="dost" class="overlay bi bi-three-dots btn btn-light btn-sm"></button>
                     </div>
                     <div class="card-body">
@@ -420,10 +411,10 @@ $user = $_SESSION['user'];
             </div>
         </div>
         <div class="row py-2 m-1">
-            <div class="col-3">
+            <div class="col-12 col-sm-6  col-lg-3 mb-4">
                 <div id="Card" class="card">
                     <div class="con" style="position: relative;">
-                        <img id="Img" src="./img/洋甘菊眼膠2.JPG" class="card-img " alt="...">
+                        <img id="Img" src="./img/洋甘菊眼膠2.jpg" class="card-img " alt="...">
                         <button id="dost" class="overlay bi bi-three-dots btn btn-light btn-sm"></button>
                     </div>
                     <div class="card-body">
@@ -432,10 +423,10 @@ $user = $_SESSION['user'];
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-sm-6  col-lg-3 mb-4">
                 <div id="Card" class="card">
                     <div class="con" style="position: relative;">
-                        <img id="Img" src="./img/面膜2.JPG" class="card-img " alt="...">
+                        <img id="Img" src="./img/面膜2.jpg" class="card-img " alt="...">
                         <button id="dost" class="overlay bi bi-three-dots btn btn-light btn-sm"></button>
                     </div>
                     <div class="card-body">
@@ -444,10 +435,10 @@ $user = $_SESSION['user'];
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-sm-6  col-lg-3 mb-4">
                 <div id="Card" class="card">
                     <div class="con" style="position: relative;">
-                        <img id="Img" src="./img/隔離素顏霜2.JPG" class="card-img " alt="...">
+                        <img id="Img" src="./img/隔離素顏霜2.jpg" class="card-img " alt="...">
                         <button id="dost" class="overlay bi bi-three-dots btn btn-light btn-sm"></button>
                     </div>
                     <div class="card-body">
@@ -509,7 +500,36 @@ $user = $_SESSION['user'];
         
 
     <script>
-        
+        // 商品輪播 
+        const swiper = new Swiper('.mySwiper', {
+            slidesPerUiew: 1, //預設：手機顯示1張
+            spaceBetween: 20, //卡片間距
+            loop: true,
+            autoplay: {
+                delay: 3000, // 每3秒輪播一次
+                disableOnInteraction: false, // 用滑鼠點選也不會停下
+                pauseOnMouseEnter: true,
+            },
+            navigator: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                992: {
+                    slidesPerView: 3,
+                }
+            }
+        });
+
+
+
         // 側邊攔
         const offcanvasElementList = document.querySelectorAll('.offcanvas')
         const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl))
