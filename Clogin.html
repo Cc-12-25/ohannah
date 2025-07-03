@@ -750,6 +750,34 @@
 
     <script>
 
+        // 商品輪播 
+        const swiper = new Swiper('.mySwiper', {
+            slidesPerUiew: 1, //預設：手機顯示1張
+            spaceBetween: 20, //卡片間距
+            loop: true,
+            autoplay: {
+                delay: 3000, // 每3秒輪播一次
+                disableOnInteraction: false, // 用滑鼠點選也不會停下
+                pauseOnMouseEnter: true,
+            },
+            navigator: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                992: {
+                    slidesPerView: 3,
+                }
+            }
+        });
+
         // 側邊攔
         const offcanvasElementList = document.querySelectorAll('.offcanvas')
         const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl))
