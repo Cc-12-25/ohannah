@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>O,HANNAH</title>
+    <link rel="icon" href="./img/OHA_icon.jpg">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="./css/Collapse Sidepanel.css">
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+</head>
+
+<style>
+    /* 卡片 */
+    #Card {
+        border: none;
+    }
+
+    .overlay {
+        color: black;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 0 10px 10px 0;
+    }
+
+    .swiper-pagination{
+        color: rgba(225, 225, 225, 0.7);
+    }
+    .mySwiper .swiper-pagination {
+    bottom: -1px;
+  }
+    
+</style>
+
+<body>
+    <div class="container my-5">
+        <h1 style="font-weight: bolder; text-align: center;">暢銷TOP</h1>
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="position-relative">
+                            <img src="./img/面膜1.jpg" class="card-img " alt="...">
+                            <a class="overlay"><button id="H" onclick="addToCart('保濕面膜')"
+                                    class="bi bi-cart2 btn btn-light btn-sm"></button></a>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">保濕面膜</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="position-relative">
+                            <img src="./img/青春水針1.jpg" class="card-img " alt="...">
+                            <a class="overlay"><button id="H" onclick="addToCart('青春水針')"
+                                    class="bi bi-cart2 btn btn-light btn-sm"></button></a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" style="text-align: center;">青春水針</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="position-relative">
+                            <img src="./img/隔離素顏霜1.jpg" class="card-img " alt="...">
+                            <a class="overlay"><button id="H" onclick="addToCart('隔離素顏霜')"
+                                    class="bi bi-cart2 btn btn-light btn-sm"></button></a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" style="text-align: center;">隔離素顏霜</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="position-relative">
+                            <img src="./img/蝸牛霜1.jpg" class="card-img " alt="...">
+                            <a class="overlay"><button id="H" onclick="addToCart('蝸牛霜')"
+                                    class="bi bi-cart2 btn btn-light btn-sm"></button></a>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">蝸牛霜</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="position-relative">
+                            <img src="./img/玻尿酸精華液1.jpg" class="card-img " alt="...">
+                            <a class="overlay"><button id="H" onclick="addToCart('玻尿酸精華液')"
+                                    class="bi bi-cart2 btn btn-light btn-sm"></button></a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title" style="text-align: center;">玻尿酸精華液</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="card">
+                        <div class="position-relative">
+                            <img src="./img/洗面乳1.jpg" class="card-img " alt="...">
+                            <a class="overlay"><button id="H" onclick="addToCart('胺基酸洗面乳')"
+                                    class="bi bi-cart2 btn btn-light btn-sm"></button></a>
+                        </div>
+                        <div class="card-body text-center">
+                            <h5 class="card-title">胺基酸洗面乳</h5>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+</body>
+<script>
+    const swiper = new Swiper('.mySwiper', {
+        slidesPerUiew: 1, //預設：手機顯示1張
+        spaceBetween: 20, //卡片間距
+        loop: true,
+        autoplay: {
+            delay: 3000, // 每3秒輪播一次
+            disableOnInteraction: false, // 用滑鼠點選也不會停下
+            pauseOnMouseEnter:true,
+        },
+        navigator: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+            },
+            992: {
+                slidesPerView: 3,
+            }
+        }
+    });
+</script>
+
+</html>

@@ -11,13 +11,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="./css/Collapse Sidepanel.css">
     <link rel="stylesheet" href="./css/login.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 </head>
 <style>
     #H {
         border-radius: 50%;
     }
 
-   /* 主頁輪播 */
+    /* 主頁輪播 */
     #KeyVisual {
         background-color: rgba(54, 51, 51, 0.5);
         ;
@@ -27,6 +31,7 @@
         margin-bottom: 20%;
         padding: 10px;
     }
+
     #KeyVisual2 {
         background-color: rgba(207, 199, 199, 0.5);
         ;
@@ -38,9 +43,10 @@
     }
 
     /* 卡片 */
-    #Card{
+    #Card {
         border: none;
     }
+
     .overlay {
         color: black;
         position: absolute;
@@ -50,23 +56,26 @@
     }
 
     /* 商品動畫 */
-    .con{
+    .con {
         overflow: hidden;
 
     }
+
     #Img:hover {
         transform: scale(1.1);
         transition: transform 0.3s ease, opacity 0.3s ease;
     }
-    #dost{
+
+    #dost {
         transform: translateX(-10%);
         opacity: 0;
         transition: opacity 0.3s ease, transform 0.3s ease;
 
     }
+
     .con:hover #Img {
-            transform: scale(1.1);
-        }
+        transform: scale(1.1);
+    }
 
     .con:hover #dost {
         opacity: 1;
@@ -75,58 +84,61 @@
 
     /* 服務條款 */
     #tyModal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            padding-top: 100px;
-            margin-top:50px ;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.4);
-        }
+        display: none;
+        position: fixed;
+        z-index: 1;
+        padding-top: 100px;
+        margin-top: 50px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.4);
+    }
 
-        .tyModalContent {
-            background-color: whitesmoke;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-        }
+    .tyModalContent {
+        background-color: whitesmoke;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+    }
 
-        .tyClose {
-            color: #aaaaaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
+    .tyClose {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
 
-        .tyClose:hover,
-        .tyClose:focus {
-            color: #ff0000;
-            cursor: pointer;
-        }
+    .tyClose:hover,
+    .tyClose:focus {
+        color: #ff0000;
+        cursor: pointer;
+    }
 
-        .cart-item { 
-            border-bottom: 1px solid #ddd;
-            padding: 5px; 
-            font-size: 20px;
-        }
-        
+    .cart-item {
+        border-bottom: 1px solid #ddd;
+        padding: 5px;
+        font-size: 20px;
+    }
+
     /* 購物車 */
-    .decrease, .increase, .remove{
+    .decrease,
+    .increase,
+    .remove {
         color: white;
         background-color: black;
         border: none;
         border-radius: 20%;
     }
-    .decrease, .increase{
+
+    .decrease,
+    .increase {
         border-radius: 50%;
         font-size: 20px;
     }
-    
 </style>
 
 
@@ -159,7 +171,9 @@
             <form class="d-flex ms-auto" role="search">
                 <input class="form-control" type="search" style="width: 150px;">
                 <button class="btn btn-secondary " type="submit"><i class="bi bi-search"></i></button>
-                <a class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#SP" aria-controls="offcanvasRight"><i id="iconCart" class="bi bi-cart2" style="font-size: 20px;"></i></a>
+                <a class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#SP"
+                    aria-controls="offcanvasRight"><i id="iconCart" class="bi bi-cart2"
+                        style="font-size: 20px;"></i></a>
                 <button class="btn" type="button"><i id="iconCircle" class="bi bi-person-circle" role="button"
                         style="font-size: 20px;"
                         onclick="document.getElementById('id01').style.display='block'"></i></button>
@@ -205,9 +219,9 @@
             </div>
         </div>
     </div>
-    
+
     <!-- 商品輪播 -->
-    <div id="bestsellertop" class="my-5">
+    <!-- <div id="bestsellertop" class="my-5">
         <div class="mt-5 pt-5 pb-4">
             <h1 style="font-weight: bolder; text-align: center;">暢銷TOP</h1>
         </div>
@@ -305,14 +319,104 @@
                 <span class="sr-only"></span>
             </a>
         </div>
+    </div> -->
+    <div id="bestsellertop" class="my-5 mx-5">
+        <div class="container my-5">
+            <h1 style="font-weight: bolder; text-align: center;">暢銷TOP</h1>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="position-relative">
+                                <img src="./img/面膜1.jpg" class="card-img " alt="...">
+                                <a class="overlay"><button id="H" onclick="addToCart('保濕面膜')"
+                                        class="bi bi-cart2 btn btn-light btn-sm"></button></a>
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">保濕面膜</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="position-relative">
+                                <img src="./img/青春水針1.jpg" class="card-img " alt="...">
+                                <a class="overlay"><button id="H" onclick="addToCart('青春水針')"
+                                        class="bi bi-cart2 btn btn-light btn-sm"></button></a>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title" style="text-align: center;">青春水針</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="position-relative">
+                                <img src="./img/隔離素顏霜1.jpg" class="card-img " alt="...">
+                                <a class="overlay"><button id="H" onclick="addToCart('隔離素顏霜')"
+                                        class="bi bi-cart2 btn btn-light btn-sm"></button></a>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title" style="text-align: center;">隔離素顏霜</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="position-relative">
+                                <img src="./img/蝸牛霜1.jpg" class="card-img " alt="...">
+                                <a class="overlay"><button id="H" onclick="addToCart('蝸牛霜')"
+                                        class="bi bi-cart2 btn btn-light btn-sm"></button></a>
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">蝸牛霜</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="position-relative">
+                                <img src="./img/玻尿酸精華液1.jpg" class="card-img " alt="...">
+                                <a class="overlay"><button id="H" onclick="addToCart('玻尿酸精華液')"
+                                        class="bi bi-cart2 btn btn-light btn-sm"></button></a>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title" style="text-align: center;">玻尿酸精華液</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="card">
+                            <div class="position-relative">
+                                <img src="./img/洗面乳1.jpg" class="card-img " alt="...">
+                                <a class="overlay"><button id="H" onclick="addToCart('胺基酸洗面乳')"
+                                        class="bi bi-cart2 btn btn-light btn-sm"></button></a>
+                            </div>
+                            <div class="card-body text-center">
+                                <h5 class="card-title">胺基酸洗面乳</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
     </div>
     <!-- 產品區 -->
     <div id="allproduct" class="my-5">
         <div class="mt-5 pt-5 pb-4">
             <h1 style="font-weight: bolder; text-align: center;">所有產品</h1>
         </div>
-        <div class="row py-2 m-1">
-            <div class="col-3">
+        <div class="row py-2 m-1 g-3">
+            <div class="col-12 col-sm-6  col-lg-3 mb-4">
                 <div id="Card" class="card">
                     <div class="con" style="position: relative;">
                         <img id="Img" src="./img/洗面乳2.jpg" class="card-img " alt="...">
@@ -324,7 +428,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-sm-6  col-lg-3 mb-4">
                 <div id="Card" class="card">
                     <div class="con" style="position: relative;">
                         <img id="Img" src="./img/洋甘菊化妝水1.jpg" class="card-img " alt="...">
@@ -336,7 +440,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-sm-6  col-lg-3 mb-4">
                 <div id="Card" class="card">
                     <div class="con" style="position: relative;">
                         <img id="Img" src="./img/玫瑰化妝水.jpg" class="card-img " alt="...">
@@ -348,7 +452,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-sm-6  col-lg-3 mb-4">
                 <div id="Card" class="card">
                     <div class="con" style="position: relative;">
                         <img id="Img" src="./img/青春水針2.jpg" class="card-img " alt="...">
@@ -362,7 +466,7 @@
             </div>
         </div>
         <div class="row py-2 m-1">
-            <div class="col-3">
+            <div class="col-12 col-sm-6  col-lg-3 mb-4">
                 <div id="Card" class="card">
                     <div class="con" style="position: relative;">
                         <img id="Img" src="./img/保濕膠囊1.jpg" class="card-img " alt="...">
@@ -374,7 +478,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-sm-6  col-lg-3 mb-4">
                 <div id="Card" class="card">
                     <div class="con" style="position: relative;">
                         <img id="Img" src="./img/玻尿酸精華液2.jpg" class="card-img " alt="...">
@@ -386,7 +490,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-sm-6  col-lg-3 mb-4">
                 <div id="Card" class="card">
                     <div class="con" style="position: relative;">
                         <img id="Img" src="./img/角鯊烷膠囊精華液2.jpg" class="card-img " alt="...">
@@ -398,7 +502,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-sm-6  col-lg-3 mb-4">
                 <div id="Card" class="card">
                     <div class="con" style="position: relative;">
                         <img id="Img" src="./img/蝸牛霜2.jpg" class="card-img " alt="...">
@@ -412,7 +516,7 @@
             </div>
         </div>
         <div class="row py-2 m-1">
-            <div class="col-3">
+            <div class="col-12 col-sm-6  col-lg-3 mb-4">
                 <div id="Card" class="card">
                     <div class="con" style="position: relative;">
                         <img id="Img" src="./img/洋甘菊眼膠2.jpg" class="card-img " alt="...">
@@ -424,7 +528,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-sm-6  col-lg-3 mb-4">
                 <div id="Card" class="card">
                     <div class="con" style="position: relative;">
                         <img id="Img" src="./img/面膜2.jpg" class="card-img " alt="...">
@@ -436,7 +540,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-12 col-sm-6  col-lg-3 mb-4">
                 <div id="Card" class="card">
                     <div class="con" style="position: relative;">
                         <img id="Img" src="./img/隔離素顏霜2.jpg" class="card-img " alt="...">
@@ -461,11 +565,13 @@
                 <h5>請輸入您的電子郵件與密碼</h5>
             </div>
             <div id="LoginUsPa">
-                <label style="width: 100%;" for="us"><input name="us" type="email" placeholder="電子郵件" required></label><br>
+                <label style="width: 100%;" for="us"><input name="us" type="email" placeholder="電子郵件"
+                        required></label><br>
                 <label style="width: 100%;" for="pa"><input name="pa" type="password" placeholder="密碼" required></label>
                 <button id="Login" type="submit">LOGIN</button>
                 <p class="npsw" style="margin: auto;text-align: center;"
-                    onclick="document.getElementById('id02').style.display='block'; document.getElementById('id01').style.display='none'">還沒有會員??立即註冊</p>
+                    onclick="document.getElementById('id02').style.display='block'; document.getElementById('id01').style.display='none'">
+                    還沒有會員??立即註冊</p>
             </div>
         </form>
     </div>
@@ -479,18 +585,24 @@
             </div>
             <div id="LoginUsPa">
                 <form id="form" action="register.php" method="post" enctype="multipart/form-data">
-                    <label style="width: 100%;" for="usname"><input id="usname" type="text" name="usname" placeholder="會員姓名" required></label><br>
-                    <label style="width: 100%;" for="phone"><input type="tel" name="phone" placeholder="電話號碼" required></label><br>
+                    <label style="width: 100%;" for="usname"><input id="usname" type="text" name="usname"
+                            placeholder="會員姓名" required></label><br>
+                    <label style="width: 100%;" for="phone"><input type="tel" name="phone" placeholder="電話號碼"
+                            required></label><br>
                     <label style="width: 100%;" for="bsday"><input type="date" name="bsday" required></label><br>
-                    <label style="width: 100%;" for="us"><input name="us" type="email" placeholder="電子郵件" required></label>
-                    <label style="width: 100%;" for="pa"><input name="pa" type="password" placeholder="密碼" required></label>
+                    <label style="width: 100%;" for="us"><input name="us" type="email" placeholder="電子郵件"
+                            required></label>
+                    <label style="width: 100%;" for="pa"><input name="pa" type="password" placeholder="密碼"
+                            required></label>
                     <label>上傳頭貼：<input type="file" name="file"></label><br>
-                    <button id="Signup" type="submit" onclick="document.getElementById('id02').style.display='none';document.getElementById('id01').style.display='block'">SIGN UP</button>
+                    <button id="Signup" type="submit"
+                        onclick="document.getElementById('id02').style.display='none';document.getElementById('id01').style.display='block'">SIGN
+                        UP</button>
                 </form>
             </div>
         </form>
     </div>
-    
+
     <!-- 購物車 -->
     <div class="offcanvas offcanvas-end" id="SP">
         <div class="offcanvas-header">
@@ -503,8 +615,10 @@
                 <h3>您的購物車是空的</h3>
                 <h5>快去逛!買買買!!!</h5>
             </div>
-            <a href="#allproduct" class="btn btn-dark mt-3"><h5 class="pt-2" data-bs-dismiss="offcanvas">繼續購物</h5></a>
-            
+            <a href="#allproduct" class="btn btn-dark mt-3">
+                <h5 class="pt-2" data-bs-dismiss="offcanvas">繼續購物</h5>
+            </a>
+
         </div>
     </div>
     <!-- 服務條款 -->
@@ -517,15 +631,46 @@
             <p>"超商寄件" 預計配達時間於寄出後約2-3工作天</p>
             <hr>
             <h5>付款方式</h5>
-            <p class="d-flex">"信用卡/金融卡"<img class="ms-auto" src="./img/螢幕擷取畫面 2025-02-09 210646.png" alt="..." style="width: 10%;"></p>
-            <p class="d-flex">"線上支付"<img class="ms-auto" src="./img/螢幕擷取畫面 2025-02-09 211205.png" alt="..." style="width: 10%;"></p>
-            <p class="d-flex">"貨到付款"<img class="ms-auto" src="./img/螢幕擷取畫面 2025-02-18 093507.png" alt="..." style="width: 10%;"></p>
-            
+            <p class="d-flex">"信用卡/金融卡"<img class="ms-auto" src="./img/螢幕擷取畫面 2025-02-09 210646.png" alt="..."
+                    style="width: 10%;"></p>
+            <p class="d-flex">"線上支付"<img class="ms-auto" src="./img/螢幕擷取畫面 2025-02-09 211205.png" alt="..."
+                    style="width: 10%;"></p>
+            <p class="d-flex">"貨到付款"<img class="ms-auto" src="./img/螢幕擷取畫面 2025-02-18 093507.png" alt="..."
+                    style="width: 10%;"></p>
+
         </div>
     </div>
-        
+
 
     <script>
+        // 商品輪播 
+        const swiper = new Swiper('.mySwiper', {
+            slidesPerUiew: 1, //預設：手機顯示1張
+            spaceBetween: 20, //卡片間距
+            loop: true,
+            autoplay: {
+                delay: 3000, // 每3秒輪播一次
+                disableOnInteraction: false, // 用滑鼠點選也不會停下
+                pauseOnMouseEnter: true,
+            },
+            navigator: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                992: {
+                    slidesPerView: 3,
+                }
+            }
+        });
+
         // 登入註冊
         var modal = document.getElementById('id01')
         window.onclick = function (event) {
@@ -533,21 +678,21 @@
                 modal.style.display = "none"
             }
         }
-        
+
         var modal = document.getElementById('id02')
-        window.onclick=function(event){
-            if(event.target === modal){
+        window.onclick = function (event) {
+            if (event.target === modal) {
                 modal.style.display = "none"
             }
         }
 
-        window.onload=()=>{
-            usname.onblur=()=>{
+        window.onload = () => {
+            usname.onblur = () => {
                 fetch(`signup.php?uid=${uid.value}`)
-                .then(response = response.text())
-                .then(result =>{
-                    usname.innerHTML = (result === '1') ? '✖':'✓'
-                })
+                    .then(response = response.text())
+                    .then(result => {
+                        usname.innerHTML = (result === '1') ? '✖' : '✓'
+                    })
             }
         }
 
@@ -569,20 +714,20 @@
         }, 100);
 
         // 購物車
-        function addToCart(productName){
+        function addToCart(productName) {
             let cart = document.getElementById("cart")
-            let cartBody = document.querySelector(".nocart") 
-                // 檢查購物車內是否已有該商品
+            let cartBody = document.querySelector(".nocart")
+            // 檢查購物車內是否已有該商品
             let existingItem = document.querySelector(`#cart div[data-product='${productName}']`)
 
             if (existingItem) {
                 // 如果商品已存在，數量 +1
                 let quantitySpan = existingItem.querySelector(".quantity")
-                quantitySpan.textContent = parseInt(quantitySpan.textContent)+1
+                quantitySpan.textContent = parseInt(quantitySpan.textContent) + 1
             } else { // 如果商品不存在，創建新的商品項目
                 let item = document.createElement("div")
                 item.className = "cart-item"
-                item.setAttribute("data-product",productName) // 設定 data 屬性方便查找
+                item.setAttribute("data-product", productName) // 設定 data 屬性方便查找
                 item.innerHTML = `
                 <div class="d-flex">
                     <span class="product-name me-auto" style="width: 50%">${productName}</span> 
@@ -601,10 +746,10 @@
                     let newQuantity = parseInt(quantitySpan.textContent) - 1;
                     if (newQuantity <= 0) {
                         let confirmDelete = confirm("此商品將被移除!");
-                        if(confirmDelete){
+                        if (confirmDelete) {
                             item.remove(); // 如果數量為 0，移除該商品
                             checkCart();
-                        }else{
+                        } else {
                             quantitySpan.textContent = "1";
                         }
                     } else {
@@ -619,17 +764,17 @@
             }
             cartBody.style.display = "none"; // 隱藏空購物車提示
         }
-        
-            // 檢查購物車是否為空
-        function checkCart(){
+
+        // 檢查購物車是否為空
+        function checkCart() {
             let cart = document.getElementById("cart")
             let cartBody = document.querySelector(".nocart")
-            if(cart.children.length === 0){
+            if (cart.children.length === 0) {
                 cartBody.style.display = "block" // 顯示購物車空訊息
             }
         }
-        
-    
+
+
     </script>
 
 </body>
